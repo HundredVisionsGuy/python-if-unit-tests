@@ -8,64 +8,63 @@ class KnownValues(unittest.TestCase):
 
     def test_centurySignForFoodDrive(self):
         # Capture the results of the function
-        result = caughtSpeeding.caughtSpeeding(60, False)
+        result = centurySign.centurySign(11, 18)
         # Check for expected output
-        self.assertEqual(0, result)
+        self.assertEqual('Food Drive', result)
 
-    def test_caughtSpeedingFor61NoBirthday(self):
+    def test_centurySignForJagFest(self):
         # Capture the results of the function
-        result = caughtSpeeding.caughtSpeeding(61, False)
+        result = centurySign.centurySign(8, 14)
         # Check for expected output
-        self.assertEqual(500, result)
+        self.assertEqual('JagFest', result)
 
-    def test_caughtSpeedingFor65NoBirthday(self):
+    def test_centurySignForJagCrew(self):
         # Capture the results of the function
-        result = caughtSpeeding.caughtSpeeding(65, False)
+        result = centurySign.centurySign(8, 15)
         # Check for expected output
-        self.assertEqual(500)
+        self.assertEqual('Jag Crew', result)
 
-    def test_caughtSpeedingFor65Birthday(self):
+    def test_centurySignForForecastingLastDay(self):
         # Capture the results of the function
-        result = caughtSpeeding.caughtSpeeding(65, True)
+        result = centurySign.centurySign(5, 14)
         # Check for expected output
-        self.assertEqual(0, result)
+        self.assertEqual('Forecasting', result)
 
-
-    def test_caughtSpeedingFor80NoBirthday(self):
+    def test_centurySignForFoodDriveLastDay(self):
         # Capture the results of the function
-        result = caughtSpeeding.caughtSpeeding(80, False)
+        result = centurySign.centurySign(2, 14)
         # Check for expected output
-        self.assertEqual(500, result)
+        self.assertEqual('Food Drive', result)
 
-    def test_caughtSpeedingFor81NoBirthday(self):
+    def test_centurySignForForecastingFirstDay(self):
         # Capture the results of the function
-        result = caughtSpeeding.caughtSpeeding(81, False)
+        result = centurySign.centurySign(2, 15)
         # Check for expected output
-        self.assertEqual(1000, result)
+        self.assertEqual('Forecasting', result)
 
-    def test_caughtSpeedingFor85NoBirthday(self):
+    def test_centurySignForMonthErrorHighValue(self):
         # Capture the results of the function
-        result = caughtSpeeding.caughtSpeeding(85, False)
+        result = centurySign.centurySign(13, 10)
         # Check for expected output
-        self.assertEqual(1000)
+        self.assertEqual("Month Error", result)
 
-    def test_caughtSpeedingFor85NoBirthday(self):
+    def test_centurySignForMonthErrorNegative(self):
         # Capture the results of the function
-        result = caughtSpeeding.caughtSpeeding(85, True)
+        result = centurySign.centurySign(-91, 15)
         # Check for expected output
-        self.assertEqual(500, result)
+        self.assertEqual('Month Error', result)
 
-    def test_caughtSpeedingFor91NoBirthday(self):
+    def test_centurySignForDayErrorLowValue(self):
         # Capture the results of the function
-        result = caughtSpeeding.caughtSpeeding(91, False)
+        result = centurySign.centurySign(10, 0)
         # Check for expected output
-        self.assertEqual(1000)
+        self.assertEqual('Day Error', result)
 
-    def test_caughtSpeedingFor55Birthday(self):
+    def test_centurySignForDayErrorHighValue(self):
         # Capture the results of the function
-        result = caughtSpeeding.caughtSpeeding(55, True)
+        result = centurySign.centurySign(8, 42)
         # Check for expected output
-        self.assertEqual(0, result)
+        self.assertEqual('Day Error', result)
 
 # Run the tests
 if __name__ == '__main__':
